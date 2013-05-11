@@ -61,3 +61,38 @@ FIELDS TERMINATED BY ','
 LOCATION '/user/hive/warehouse/flight_data';
 </code>
 </pre>
+
+* Load the data into the table:
+
+<pre>
+<code>
+LOAD DATA LOCAL INPATH '2008.csv' OVERWRITE INTO TABLE flight_data;
+</code>
+</pre>
+
+* Ensure the table got created and loaded fine:
+
+<pre>
+<code>
+SHOW TABLES;
+SELECT
+   *
+FROM
+   flight_data
+LIMIT 10; 
+</code>
+</pre>
+
+* Query the table. Find average arrival delay for all flights departing SFO in January:
+
+<pre>
+<code>
+SELECT
+   avg(arr_delay)
+FROM
+   flight_data
+WHERE
+   month=1
+   AND origin='SFO';
+</code>
+</pre>
