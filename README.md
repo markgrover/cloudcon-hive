@@ -20,7 +20,7 @@ b) The second dataset contains listing of various airport codes in continental U
 
 Hive commands
 =============
-You will need a box with Hadoop and Hive installed. Easiest way to get it to install one of the Demo VMs or use packages available from Apache Bigtop. Cloudera Demo VMs are available at https://ccp.cloudera.com/display/SUPPORT/Cloudera+QuickStart+VM. You can learn more about Apache Bigtop and install integration test Apache Hadoop and Hive by going to the [project's main page](bigtop.apache.org) and the [project's wiki](https://cwiki.apache.org/confluence/display/BIGTOP/Index).
+You will need a box with Hadoop and Hive installed. Easiest way to get it to install one of the Demo VMs or use packages available from Apache Bigtop. Cloudera Demo VMs are available from [Cloudera's website](https://ccp.cloudera.com/display/SUPPORT/Cloudera+QuickStart+VM). You can learn more about Apache Bigtop and install integration test Apache Hadoop and Hive by going to the [project's main page](bigtop.apache.org) and the [project's wiki](https://cwiki.apache.org/confluence/display/BIGTOP/Index).
 * Git clone this repo:
 
 <pre>
