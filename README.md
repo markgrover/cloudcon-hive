@@ -25,7 +25,7 @@ Hive commands
 
 <pre>
 <code>
-CREATE EXTERNAL TABLE flight_data(
+CREATE TABLE flight_data(
    year INT,
    month INT,
    day INT,
