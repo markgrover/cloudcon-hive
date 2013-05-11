@@ -21,11 +21,13 @@ b) The second dataset contains listing of various airport codes in continental U
 Hive commands
 =============
 You will need a box with Hadoop and Hive installed. Easiest way to get it to install one of the Demo VMs or use packages available from Apache Bigtop. Cloudera Demo VMs are available from [Cloudera's website](https://ccp.cloudera.com/display/SUPPORT/Cloudera+QuickStart+VM). You can learn more about Apache Bigtop and install integration test Apache Hadoop and Hive by going to the [project's main page](bigtop.apache.org) and the [project's wiki](https://cwiki.apache.org/confluence/display/BIGTOP/Index).
-* Git clone this repo:
+* Git clone this repo, untar dataset and launch hive:
 
 <pre>
 <code>
 git clone git://github.com/markgrover/cloudcon-hive.git
+tar -xzvf cloudcon-hive/2008.tar.gz
+hive
 </code>
 </pre>
 
@@ -137,3 +139,22 @@ FROM
 LIMIT 10
 </code>
 </pre>
+
+* On hive shell: run a join query to find the average delay in January 2008 for each airport and to print out the airport's name:
+
+<pre>
+<code>
+SELECT
+   name,
+   AVG(arr_delay)
+FROM
+   flight_data_p f
+   INNER JOIN airports a
+   ON (f.origin=a.code)
+WHERE
+   month=1
+GROUP BY
+   name;
+</code>
+</pre>
+
