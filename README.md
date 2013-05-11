@@ -57,8 +57,7 @@ CREATE TABLE flight_data(
    late_aircraft_delay STRING
 )
 ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
-LOCATION '/user/hive/warehouse/flight_data';
+FIELDS TERMINATED BY ',';
 </code>
 </pre>
 
