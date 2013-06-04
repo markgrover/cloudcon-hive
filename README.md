@@ -124,7 +124,7 @@ FIELDS TERMINATED BY ',';
 
 <pre>
 <code>
-LOAD DATA LOCAL INPATH 'cloudcon-hive/airports.csv' OVERWRITE INTO TABLE flight_data;
+LOAD DATA LOCAL INPATH 'cloudcon-hive/airports.csv' OVERWRITE INTO TABLE airports;
 </code>
 </pre>
 
@@ -148,7 +148,7 @@ SELECT
    name,
    AVG(arr_delay)
 FROM
-   flight_data_p f
+   flight_data f
    INNER JOIN airports a
    ON (f.origin=a.code)
 WHERE
