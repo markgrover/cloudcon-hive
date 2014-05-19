@@ -1,11 +1,10 @@
 cloudcon-hive
 =============
 
-Hive presentation at CloudCon 2013 in San Francisco
+This repo contains data set and queries I use in my presentations on SQL-on-Hive (i.e. Impala and hive) at various conferences. This started off as a repo that was use in my presentation at CloudCon in San Francisco, so the name of the repo reflects that but now this repo has morphed into a single repository that contains my dataset for demos and such at various different presentations on Hive and Impala.
 
 Files in the repository
 =======================
-* [Grover Hive presentation.pdf](https://github.com/markgrover/cloudcon-hive/blob/master/Grover-Hive%20Presentation.pdf): Slides used in the presentation
 * [2008.tar.gz](https://github.com/markgrover/cloudcon-hive/blob/master/2008.tar.gz): Flight delay dataset from 2008.
 * [airports.csv](https://github.com/markgrover/cloudcon-hive/blob/master/airports.csv): Dataset linking airport codes to their full names. More details in [Introduction](https://github.com/markgrover/bdtc-hive/blob/master/1-Introduction.md) section.
 * [README.md](https://github.com/markgrover/cloudcon-hive/blob/master/README.md): This file.
@@ -18,8 +17,9 @@ a) The first dataset contains on-time flight performance data from 2008, origina
 
 b) The second dataset contains listing of various airport codes in continental US, Puerto Rico and US Virgin Islands. The source of this dataset is http://www.world-airport-codes.com/ The data was scraped from this website and then cleansed to be in its present CSV form.
 
-Hive commands
-=============
+Setup
+=====
+
 You will need a box with Hadoop and Hive installed. Easiest way to get it to install one of the Demo VMs or use packages available from Apache Bigtop. Cloudera Demo VMs are available from [Cloudera's website](https://ccp.cloudera.com/display/SUPPORT/Cloudera+QuickStart+VM). You can learn more about Apache Bigtop and install integration test Apache Hadoop and Hive by going to the [project's main page](bigtop.apache.org) and the [project's wiki](https://cwiki.apache.org/confluence/display/BIGTOP/Index).
 * Git clone this repo, untar dataset and launch hive:
 
@@ -30,6 +30,10 @@ tar -xzvf cloudcon-hive/2008.tar.gz
 hive
 </code>
 </pre>
+
+Hive commands
+=============
+You can create tables for the datasets in Hive. These tables can directly be used in Impala, since Hive and Impala share metadata. Of course, you can create these tables directly in Impala itself too, in case you don't want to use Hive. We will only show you commands for creating tables in Hive only though.
 
 * On hive shell: Create hive table, *flight_data*:
 
