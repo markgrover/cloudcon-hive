@@ -162,3 +162,47 @@ GROUP BY
 </code>
 </pre>
 
+Impala commands
+===============
+
+* Now, we will run the same queries on Impala to compare its performance with Hive. No need to re-create these tables in Impala since Hive and Impala share the same metastore. You can directly access them in Impala.
+
+<pre>
+<code>
+bash> impala-shell
+impala> connect localhost;
+impala> show tables;
+</code>
+</pre>
+
+* On Impala shell, query the table. Find average arrival delay for all flights departing SFO in January:
+
+<pre>
+<code>
+SELECT
+   avg(arr_delay)
+FROM
+   flight_data
+WHERE
+   month=1
+   AND origin='SFO';
+</code>
+</pre>
+
+* On Impala shell: run a join query to find the average delay in January 2008 for each airport and to print out the airport's name:
+
+<pre>
+<code>
+SELECT
+   name,
+   AVG(arr_delay)
+FROM
+   flight_data f
+   INNER JOIN airports a
+   ON (f.origin=a.code)
+WHERE
+   month=1
+GROUP BY
+   name;
+</code>
+</pre>
